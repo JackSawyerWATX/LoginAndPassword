@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkLogin()">Login</button>
+
+  <script>
+    function checkLogin() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const correctUsername = "your_username";
+      const correctPassword = "your_password";
+
+      let attemptsLeft = 3;
+
+      if (username === correctUsername && password === correctPassword) {
+        alert("Login successful!");
+      } else {
+        attemptsLeft--;
+        alert(`Incorrect username or password. Attempts remaining: ${attemptsLeft}`);
+
+        if (attemptsLeft === 0) {
+          alert("Too many failed attempts. Account locked.");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
